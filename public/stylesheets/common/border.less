@@ -1,0 +1,64 @@
+﻿@import 'colors';
+
+
+@width:1px;
+/* border bottom dashed */
+.bb-dashed-gray{
+	border-bottom:1px dashed @gray;
+};
+.bb-dashed-light-gray{
+	border-bottom:1px dashed @light-gray;
+};
+.bb-dashed-light-silver{
+	border-bottom:1px dashed @light-silver;
+};
+.bb-dashed-bright-silver{
+	border-bottom:1px dashed @bright-silver;
+};
+
+/* border bottom solid */
+.bb-solid-gray{
+	border-bottom:1px solid @gray;
+};
+.bb-solid-light-gray{
+	border-bottom:1px solid @light-gray;
+};
+.bb-solid-light-silver{
+	border-bottom:1px solid @light-silver;
+};
+.bb-solid-bright-silver{
+	border-bottom:1px solid @bright-silver;
+};
+
+
+/* border top dashed */
+.bt-dashed-gray{
+	border-top:1px dashed @gray;
+};
+.bt-dashed-light-gray{
+	border-top:1px dashed @light-gray;
+};
+.bt-dashed-light-silver{
+	border-top:1px dashed @light-silver;
+};
+/* border top solid */
+.bt-solid-gray{
+	border-top:1px solid @gray;
+};
+.bt-solid-light-gray{
+	border-top:1px solid @light-gray;
+};
+.bt-solid-light-silver{
+	border-top:1px solid @light-silver;
+};
+.bt-solid-bright-silver{
+	border-top:1px solid @bright-silver;
+};
+
+/* border top bottom left right solid */
+.border-solid-gray(@width,@color){
+	border:@width solid @color;
+}
+.border-dashed-gray(@width,@color){
+	border:@width dashed @color;
+}

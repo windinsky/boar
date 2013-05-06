@@ -1,0 +1,164 @@
+@import 'common';
+.user-profile{
+	.fc-gray;
+	.bc-white;
+	position:relative;
+	.drag-area{
+		.root-label{
+			position:absolute;
+			top:20px;
+			overflow:hidden;
+			>div{
+				padding-left:55px;
+				width:73px;
+				float:left;
+				cursor:pointer;
+				height:27px;
+				line-height:29px;
+				.fc-light-gray;
+			}
+			>div.n0{
+				.bi(groupBg);
+			}
+			>div.n0.hover{
+				.bi(groupBgHover);
+			}
+			>div.n1{
+				.bi(personalBg);
+			}
+			>div.n1.hover{
+				.bi(personalBgHover);
+			}
+			>div.n2{
+				.bi(buyBg);
+			}
+			>div.n2.hover{
+				.bi(buyBgHover);
+			}
+		}
+		.attr-container{
+			padding-top:60px;
+		}
+		.content{
+			overflow:hidden;
+		}
+		.node{
+			margin:5px 0;
+		}
+		.children{
+			padding-left:20px;
+		}
+		.shrinked,.extended,.placeholder{
+			float:left;
+			margin-top:4px;
+		}
+		.shrinked{
+			.show-content;
+			
+		}
+		.extended{
+			.hide-content;
+			float:left;
+		}
+		.node-val,.placeholder{
+			.ml1;
+		}
+		.placeholder{
+			background:none;
+		}
+		.node-val{
+			display:block;
+			float:left;
+			line-height:16px;
+			padding:2px 10px;
+			cursor:pointer;
+			word-break:keep-all;
+			
+		}
+		.draggable{
+/*			width:210px;*/
+			.bc-bright-silver;
+			border:1px solid @light-silver;
+			padding:1px 10px;
+			&:hover,&.focus{
+				.bc-light-blue;
+			};
+		}
+		.drag-note{
+			position:absolute;
+			left:35%;
+			top:120px;
+			.bi(dragHere);
+			width:104px;
+			height:46px;
+		}
+	}
+	.drop-area{
+		.drop-zone{
+			.bc-white;
+			width:300px;
+			padding:10px 10px 20px 10px;
+			border:1px dashed @light-silver;
+			
+			
+			.tip{
+				text-align:center;
+				padding:40px 0;
+				.bc-light-blue;
+				border:1px solid @bright-silver;
+				
+				.people-drag{
+					margin-right:5px;
+				}
+			}
+			.or-zone{
+				padding:10px;
+				border:1px solid @bright-silver;
+				margin:10px 10px;
+				
+				.bi(or);
+				.bc-bright-silver;
+				background-position:250px center;
+				background-repeat:no-repeat;
+				.selected-attr{
+					line-height:24px;
+					.remove-attr{
+						display:inline-block;
+						cursor:pointer;
+						margin-right:5px;
+						.fc-light-gray;
+						&:hover{
+							.fc-red;
+						};
+					}
+				}
+			}
+			.or-zone.active{
+				.bc-light-yellow;
+			}
+			.or-zone.hover{
+				.bc-yellow;
+			}
+			.and-zone.active{
+				.bc-light-blue;
+			}
+			.and-zone.hover{
+				.bc-sky-blue;
+			}
+			.and-zone{
+				padding:10px 0;
+				min-height:150px;
+			}
+			.and{
+				padding-left:10px;
+			}
+		}
+		.user-attr-submit{
+			.bt-dashed-light-silver;
+			padding-left:10px;
+			padding-top:10px;
+			overflow:hidden;
+			margin-top:30px;
+		}
+	}
+}

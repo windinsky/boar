@@ -1,0 +1,62 @@
+﻿@import 'colors';
+@img-path: '../img/';
+/* background-color */
+
+.bc(@color){
+	background-color:@color;
+}
+.bc-light-yellow(){
+	.bc(@light-yellow);
+};
+.bc-bright-yellow(){
+	.bc(@bright-yellow);
+};
+.bc-light-silver(){
+	.bc(@light-silver);
+};
+.bc-lighter-silver(){
+	.bc(@lighter-silver);
+};
+.bc-bright-silver(){
+	.bc(@bright-silver);
+};
+.bc-shallow-gray{
+	.bc(@shallow-gray);
+}
+.bc-gray{
+	.bc(@gray);
+}
+.bc-red(){
+	.bc(@red);
+};
+.bc-green(){
+	.bc(@green);
+};
+.bc-blue(){
+	.bc(@blue);
+}
+.bc-yellow(){
+	.bc(@yellow)
+}
+.bc-light-blue(){
+	.bc(@light-blue);
+}
+.bc-white(){
+	.bc(@white);
+}
+.bc-dart-gray{
+	.bc(@dart-gray);	
+}
+.bc-light-black{
+	.bc(@light-black);	
+}
+.bi(@img,@type: png){
+	background-image:url("@{img-path}@{img}.@{type}");
+}
+.bg-repeat-x(@img,@type: png){
+	background:url("@{img-path}@{img}.@{type}") repeat-x;
+}
+.double-bi(@img1,@img2,@position1: left,@position2: right){
+	background:url("@{img-path}@{img1}.png") @position1,url("@{img-path}@{img2}.png") @position2;
+	-pie-background:url("@{img-path}@{img1}.png") @position1,url("@{img-path}@{img2}.png") @position2;
+}

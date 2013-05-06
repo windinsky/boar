@@ -1,0 +1,40 @@
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+<link rel="stylesheet" href="/stylesheets/user.css" type="text/css">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<div id="container">
+	<form action="/sessions" method="post" accept-charset="utf-8">
+		<table border="0" cellspacing="5" cellpadding="5">
+			<tr>
+				<td><label for="account">用户名</label></td>
+				<td class="tleft"><input type="text" name="account" value="" id="account"/></td>
+			</tr>
+			<tr>
+				<td><label for="account">密码</label></td>
+				<td class="tleft"><input type="password" name="password" value="" id="password"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script src="/javascripts/jQuery.js"></script>
+<script src="/javascripts/jQuery.fn.tooltip.js"></script>
+<script src="/javascripts/displayMessage.js"></script>
+<script>
+	$(function(){
+		$('form').submit(function(){
+			var account = $('#account').val(),password = $('#password').val(),valid = !0;
+			if (account.length > 16 || account.length < 6 || account.match(/[^a-zA-Z0-9_]/)) {
+				$('#account').tooltip({msg:'用户名长度应该在6-16之间,由字母，数字和下划线组成'});
+				valid = !1;
+			};
+			if (password.length > 16 || password.length < 6) {
+				$('#password').tooltip({msg:'密码长度应该在6-16之间'});
+				valid = !1;
+			};
+			return valid;
+		});
+		$('#account').focus();
+	})
+</script>

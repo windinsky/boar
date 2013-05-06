@@ -1,0 +1,24 @@
+<link rel="stylesheet" href="/stylesheets/article_index.css" type="text/css">
+<script src="/javascripts/jQuery.js" type="text/javascript" charset="utf-8"></script>
+<a href="/articles/new">新建文章</a>
+<% if(articles.length == 0){ %>
+	<p>您没有文章!</p>
+<% }else{ %>
+		<% articles.forEach(function(article){ %>
+		<div class="article" id='article_<%= article.id %>'>
+			<div class="operators">
+				<a href="/articles/<%= article.id %>/edit">编辑</a>
+			</div>
+			<div class="title">
+				<h3><%= article.title %></h3>
+				<span><%= DateUtils.format(article.created_at) %></span>
+			</div>
+			<div class="body"><%- article.body %></div>
+		</div>
+		<% }) %>
+<% } %>
+<script>
+	$('.article').click(function(){
+		location.href='/articles/'+this.id.split('_')[1]
+	})
+</script>

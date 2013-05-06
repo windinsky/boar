@@ -1,0 +1,35 @@
+@import 'colors';
+@img-path: '../img/';
+/* background-color */
+
+.bc(@color){
+	background-color:@color;
+}
+.bc-light-yellow(){
+	.bc(@light-yellow);
+};
+.bc-bright-yellow(){
+	.bc(@bright-yellow);
+};
+.bc-light-silver(){
+	.bc(@light-silver);
+};
+.bc-bright-silver(){
+	.bc(@bright-silver);
+};
+.bc-red(){
+	.bc(@red);
+};
+.bc-green(){
+	.bc(@green);
+};
+.bc-white(){
+	.bc(@white);
+}
+.bi(@img,@type: png){
+	background:url("@{img-path}@{img}.@{type}");
+}
+.double-bi(@img1,@img2,@position1: left,@position2: right){
+	background:url("@{img-path}@{img1}.png") @position1,url("@{img-path}@{img2}.png") @position2;
+	-pie-background:url("@{img-path}@{img1}.png") @position1,url("@{img-path}@{img2}.png") @position2;
+}

@@ -1,0 +1,44 @@
+body{
+	background:url(/images/bg.png);
+	font-size:12px;
+}
+#container{
+	width:1000px;
+	margin:auto;
+	margin-top:30px;
+	background:white;
+	border:1px solid silver;
+	box-shadow:0 0 10px silver;
+	padding:15px;
+	min-height:500px;
+}
+h1{
+	border-bottom:1px solid silver;
+	padding-bottom:15px;
+}
+#content{
+	width:900px;
+	margin:auto;
+	margin-top:40px;
+	font-size:14px;
+	color:#666;
+}
+.author{
+	color:orange;
+	font-weight:bolder;
+}
+h1,.date{
+	color:#88f;
+}
+.backLink{
+	padding:5px 10px;
+	background:#333;
+	position:fixed;
+	right:0;
+	top:0;
+	border-bottom-left-radius: 5px;
+}
+.backLink a{
+	text-decoration:none;
+	color:white;
+}

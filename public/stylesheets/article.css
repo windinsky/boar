@@ -1,0 +1,65 @@
+body{
+	background:#666;
+}
+#container{
+	font-size:12px;
+	width:1000px;
+	margin:auto;
+	padding-top:30px;
+}
+h1{
+	color:white;
+}
+#editType{
+	float:right;
+	padding:5px 0;
+}
+#editType span{
+	border-radius:5px;
+	cursor:pointer;
+	display:inline-block;
+	padding:5px 10px;
+	background:#ddd;
+	color:black;
+	-webkit-transition: background .4s ease-in-out;
+}
+#editType span.hover{
+	background:black;
+	color:white;
+}
+.clear{
+	overflow:hidden;
+}
+#rich{
+	height:500px;
+	border-radius:10px;
+	overflow:hidden;
+	box-shadow:0 0 15px gray;
+}
+#rich textarea{
+	width:1000px;height:451px
+}
+#html{
+	display:none;
+}
+#html textarea{
+	width:1000px;
+	height:500px;
+}
+#titleCon{
+	font-size:16px;
+	font-weight:bolder;
+	color:white;
+	float:left;
+}
+#title{
+	width:500px;
+	padding:5px;
+	margin-left:10px;
+	outline:none;
+	border-width:1px;
+}
+#title:focus{
+	border:1px solid #494;
+}
+

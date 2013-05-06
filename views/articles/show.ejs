@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/stylesheets/article_show.css" type="text/css">
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+<script src="/javascripts/jQuery.js" type="text/javascript" charset="utf-8"></script>
+<div id="container">
+	<h1><%= article.title %></h1>
+	<div class="tright"><span class="author"><%= author %></span> | <span class="date"><%= DateUtils.format(article.updated_at) %></span></div>
+	<div id="content">
+		<%- article.body %>
+	</div>
+</div>
+<div class="backLink">
+	<a href="/">返回首页</a>
+</div>

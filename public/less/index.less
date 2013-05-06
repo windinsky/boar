@@ -1,0 +1,97 @@
+@import 'common';
+
+.index-top-banner{
+	margin-top:20px;
+	.fc-light-gray;
+	.span6{
+		min-height:170px;
+		border:1px solid @light-silver;
+		background:@bright-silver;
+		.name-card-structure(100px,170px,58px,56px,40px,head_pic);
+	};
+	.span6:last-child{
+		.name-card-structure(100px,170px,59px,62px,40px,hammer);
+	}
+	.right{
+		padding-top:24px;
+		line-height:24px;
+		
+		&>div{
+			width:80%;
+			padding:5px 0;
+		}
+		&>div.start-create-plan{
+			padding-top:15px;
+			
+			span{
+				line-height:30px;
+			}
+		}
+	}
+	strong{
+		.fc-gray;
+		font-size:14px;
+	}
+	.big-number{
+		.font24();
+		line-height:30px;
+	}
+}
+.plan-control-pannal{
+	.mt2;
+	background:@bright-silver;
+	border-top:1px solid @light-silver;
+	border-bottom:1px dashed @light-silver;
+	.name-card-structure(100px,104px,60px,61px,20px,chart);
+	
+	.select-plan{
+		padding-top:30px;
+		width:16%;
+	}
+	.span4{
+		padding-top:60px;
+		
+		a{
+			padding:0 10px;
+		}
+	}
+}
+.index-chart{
+	height:255px;
+	background:@bright-silver;
+	.mt2;
+	padding-bottom:20px;
+	line-height:24px;
+	.chart-header{
+		overflow:hidden;
+		span:first-child{
+			float:left;
+		};
+		span:last-child{
+			float:right;
+			width:250px;
+			label,input{
+				float:left;
+				.font12;
+				height:24px;
+				line-height:24px;
+				margin:0;
+			}
+			input{
+				.ml(1.5);
+			}
+			label{
+				.ml(0.5);
+			}
+		};
+	}
+	.chart{
+		height:240px;
+		.bc(@white);
+	}
+}
+.index-data-table{
+	.bc(@bright-silver);
+	min-height:250px;
+	.mt2;
+}

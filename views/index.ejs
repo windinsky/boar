@@ -1,0 +1,31 @@
+<link rel="stylesheet" href="/css/index.css" type="text/css">
+<div id="container">
+	<div id="header">
+		<div class="hl">
+			<h1>FrontEnd</h1>
+		</div>
+		<div class="hr">
+			<div id="search_c">
+				<input type="text" name="search" value="" id="searchInput"/>
+				<span id="searchSubmit">search</span>
+			</div>
+		</div>
+	</div>
+	<subtitle>More passion,more fun</subtitle>
+	<div id="nav">
+		<ul>
+			<li><a href="/articles">Articles</a></li>
+			<li>Photos</li>
+			<li>Motions</li>
+			<li>About</li>
+		</ul>
+	</div>
+	<div id="articles">
+		<% for(var i = 0 ; i < articles.length ; i++){ %>
+		<div class="article">
+			<h2><a href="/articles/<%= articles[i].id %>"><%= articles[i].title %></a></h2>
+		</div>
+		<% } %>
+	</div>
+</div>
+<script src="/javascripts/jQuery.js" type="text/javascript" charset="utf-8"></script>

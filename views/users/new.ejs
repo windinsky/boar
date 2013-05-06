@@ -1,0 +1,59 @@
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+<link rel="stylesheet" href="/stylesheets/user.css" type="text/css">
+<script src="/javascripts/jQuery.js"></script>
+<script src="/javascripts/jQuery.fn.tooltip.js"></script>
+<div id="container">
+	<form action="/users" method="post" accept-charset="utf-8">
+		<table border="0" cellspacing="5" cellpadding="5">
+			<tr>
+				<td><label for="account">用户名</label></td>
+				<td class="tleft"><input type="text" name="account" value="" id="account"/></td>
+			</tr>
+			<tr>
+				<td><label for="account">密码</label></td>
+				<td class="tleft"><input type="password" name="password" value="" id="password"/></td>
+			</tr>
+			<tr>
+				<td colspan="2"><input type="submit" value="提交"></td>
+			</tr>
+		</table>
+	</form>
+</div>
+<script>
+	var accountExist = false;
+	$('form').submit(function(){
+		var account = $('#account').val(),password = $('#password').val(),
+		valid = checkAccount(account,!1);
+		if (password.length > 16 || password.length < 6) {
+			$('#password').tooltip({msg:'密码长度应该在6-16之间'});
+			valid = !1;
+		};
+		return valid;
+	});
+	$('#account').blur(function(){
+		checkAccount(this.value,true);
+	});
+	
+	function checkAccount(account,async){
+			var account = account;
+			if (account.length > 16 || account.length < 6 || account.match(/[^a-zA-Z0-9_]/)) {
+				$('#account').tooltip({msg:'用户名长度应该在6-16之间,由字母，数字和下划线组成'});
+				return false;
+			}else{
+				$.ajax({
+					url: '/users/check',
+					data: {account:account},
+					dataType: 'text',
+					type: 'post',
+					async: async,
+					success: function(result){
+						accountExist = (result == '1');
+						if (accountExist) {
+							$('#account').tooltip({msg:'用户名已经存在，请选用其他用户名'});
+						}
+					}
+				});
+				return !accountExist;
+			}
+	}
+</script>

@@ -1,0 +1,54 @@
+@import 'common';
+@import 'adPlanCommon';
+
+@absolute:absolute;
+@Bwidth:2px;
+
+.position(){
+	position:fixed;
+}
+.border(){
+	border:@Bwidth solid @gray;
+}
+
+/* adPlanInfo.html */
+.mask{
+	width:100%;
+	height:100%;
+	.bc(@black);
+	.position;
+	z-index:100;
+	top:0;
+	left:0;
+	opacity:0.3;
+	filter:alpha(opacity=30);
+}
+.originality-popup{
+	width:54%;
+	.border;
+	.position;
+	z-index:110;
+	top:20%;
+	left:23%;
+	.bc(@white);
+	header{
+		padding:10px 0;
+		.ml1;
+		.mr1;
+		.bb-dashed-light-silver;
+		.fc-gray;
+		> a{
+			float:right;
+		}
+	}
+	.list-title{
+		padding:80px 50px 7px 50px;
+	}
+	.tactics-list{
+		height:105px;
+		padding:50px 0;
+	}
+	.submit-cancel{
+		padding:10px 50px 20px 50px;
+	}
+}

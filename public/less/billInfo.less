@@ -1,0 +1,72 @@
+@import "common";
+.bill-info{
+	.mt2;
+	.user-info{
+		border:1px solid @light-silver;
+		.mt1;
+		.bc-bright-silver;
+		.name-card-structure(110px,120px,61px,44px,20px,ico-card);
+		.right{
+			padding-top:15px;
+			.welcome{
+				.bb-dashed-light-silver;
+				.mr2;
+			}
+			.big-number{
+				.font24;
+			}
+			& > div{
+				padding:5px 0;
+			}
+			.remain-cash{
+				*{
+					float:left;
+				}
+				span{
+					display:inline-block;
+					padding-top:10px;
+				};
+				span.fc-gray{
+					padding-top:14px;
+				};
+			}
+		}
+	}
+	strong{
+		.fc-gray;
+		.font14;
+	}
+	.table-controller{
+		.fc-gray;
+		.mt2;
+		div{
+			.bc-bright-silver;
+			.bt-dashed-light-silver;
+		};
+		.controll{
+			padding:20px 0;
+			span{
+				display:inline-block;
+				height:30px;
+				line-height:30px;
+				margin:0 10px;
+			}
+			select{
+				float:right;
+				.mr1;
+			}
+		};
+		.summary{
+			padding:10px;
+			strong{
+				.font12;
+				.fc-red;
+			};
+		};
+	};
+	.table-container{
+		height:540px;
+		.bc-bright-silver;
+		.bb-solid-light-silver;
+	}
+}

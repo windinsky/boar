@@ -1,0 +1,22 @@
+﻿@import 'background';
+
+.name-card-structure(@left-width,@height,@icon-width,@icon-height,@icon-top,@icon-url,@icon-type:png){
+	min-height:@height;
+	/*overflow:hidden;*/
+	.left{
+		float:left;
+		width:@left-width;
+		.ico{
+			width:@icon-width;
+			height:@icon-height;
+			.bi(@icon-url,@icon-type);
+			display:block;
+			margin:auto;
+			margin-top:@icon-top;
+			overflow:hidden;
+		}
+	}
+	.right{
+		padding-left:@left-width;
+	}
+}

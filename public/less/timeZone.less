@@ -1,0 +1,57 @@
+@import 'common';
+
+.timeZone{
+	.fc-light-gray;
+	th{
+		.bi(area_title_bg);
+		.t-left;
+		font-weight:normal;
+		span,input{
+			display:inline-block;
+			float:left;
+		}
+		input{
+			.mt(0.3);
+			.mr(0.4)
+		}
+	}
+	input{
+		margin:0;
+		padding:0;
+	}
+	th,td{
+		padding-right:15px;
+		padding-left:15px;
+	}
+	td{
+		.bb-dashed-light-silver;
+		span{
+			width:18px;
+			height:23px;
+			line-height:23px;
+			.bc-white;
+			display:inline-block;
+			.mr(0.5);
+			border:1px solid @lighter-silver;
+			.t-center;
+			cursor:pointer;
+		}
+		span.selected{
+			.bc-blue;
+			border:1px solid @blue;
+		}
+		
+	}
+	td.hover{
+		.bc-green;
+	}
+	tr.hover{
+		.bc-green;
+	}
+	width:900px;
+}
+.area-bottom{
+	.bc-bright-silver;
+	padding:16px 0;
+	width:900px;
+}

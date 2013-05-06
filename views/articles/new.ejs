@@ -1,0 +1,65 @@
+<link rel="stylesheet" href="/stylesheets/style.css" type="text/css">
+<link rel="stylesheet" href="/stylesheets/article.css" type="text/css">
+<link href="/sinaEditor/style/css/editor.css" type="text/css" rel="stylesheet" />
+<link href="/sinaEditor/style/css/panel.css" type="text/css" rel="stylesheet" />
+<div id="container">
+	<form action="/articles" method="post" accept-charset="utf-8">
+		<h1>新建文档</h1>
+		<div class="clear" style="margin-top:20px;margin-bottom:10px;">
+			<div id="titleCon">
+				<label for="title">标题：</label><input type="text" name="title" value="" id="title">
+			</div>
+			<div id="editType">
+				<span id="richMode" class="hover">富文本编辑模式</span>
+				<span id="htmlMode">HTML模式</span>
+			</div>
+		</div>
+		<div id="rich">
+			<div class="pro_tools" id="testSaveButtons"></div>
+			<div id="frame">
+				<textarea id="frameToText"></textarea>
+			</div>
+		</div>
+		<div id="html">
+			<textarea></textarea>
+		</div>
+		<textarea style='display:none' name="body" id='body'></textarea>
+		<div class="tright" style="margin-top:20px;">
+			<input type="submit" name="submit" value="创建" id="submit">
+		</div>
+	</form>
+</div>
+<script src="/javascripts/jQuery.js"></script>
+<script src="/javascripts/displayMessage.js"></script>
+<script src="/sinaEditor/sinaeditor.js"></script>
+<script src="/sinaEditor/sinaEditorConfig.js"></script>
+<script>
+var mode = 'rich';
+	window.onload = function(){
+		window.editor = SinaEditor.createEditor(config);
+	};
+	$(function(){
+		$('#htmlMode').click(function(){
+			$('#rich').hide();
+			$('#html').show();
+			$('#htmlMode').addClass('hover');
+			$('#richMode').removeClass('hover');
+			mode = 'html';
+		});
+		$('#richMode').click(function(){
+			$('#rich').show();
+			$('#html').hide();
+			$('#htmlMode').removeClass('hover');
+			$('#richMode').addClass('hover');
+			mode = 'rich';
+		});
+		$('form').submit(function(){
+			$('#body').val($('#'+mode + ' textarea').val() || $('iframe')[0].contentWindow.document.body.innerHTML);
+			if ($('#title').val().trim() == '' || $('#body').val().trim() == '') {
+				DisplayMessage('<span style="color:#ff7">标题和内容不能为空</span>');
+				return false;
+			};
+			return true;
+		});
+	})
+</script>

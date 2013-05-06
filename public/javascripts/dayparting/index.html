@@ -1,0 +1,105 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title></title>
+		<link rel="stylesheet" href="s.css" />
+		<style>
+			table {
+			   -moz-user-select: none; /*火狐*/
+			   -webkit-user-select: none;  /*webkit浏览器*/
+			   -ms-user-select: none;   /*IE10*/
+			   -khtml-user-select: none; /*早期浏览器*/
+			   user-select: none;
+			}
+		</style>
+		<script src="jQuery.js"></script>
+		<script src = "../../libs/Function.bind.js"></script>
+		<script src = "../EventCenter/events.js"></script>
+		<script src="../geometry/geometry.js"></script>
+		<script src="drag.js"></script>
+		<script src="j.js"></script>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	</head>
+	<body>
+		<table border="0" cellspacing="0" cellpadding="5" class="timeZone">
+			<tr>
+				<th><input type="checkbox" id="selectAll"/></th>
+				<th>日期</th>
+				<th><input type="checkbox" id="selectBeforeDawn" data-index="2"/><span>00:00 - 05:00</span></th>
+				<th><input type="checkbox" id="selectMorning" data-index="3"/><span>06:00 - 11:00</span></th>
+				<th><input type="checkbox" id="selectAfternoon" data-index="4"/><span>12:00 - 17:00</span></th>
+				<th><input type="checkbox" id="selectNight" data-index="5"/><span>18:00 - 23:00</span></th>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_1" class="select"/></td>
+				<td>星期一</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_2" class="select"/></td>
+				<td>星期二</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_3" class="select"/></td>
+				<td>星期三</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_4" class="select"/></td>
+				<td>星期四</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_5" class="select"/></td>
+				<td>星期五</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_6" class="select"/></td>
+				<td>星期六</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+			<tr>
+				<td><input type="checkbox" id="selectAll_7" class="select"/></td>
+				<td>星期日</td>
+				<td><span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></td>
+				<td><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span></td>
+				<td><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span></td>
+				<td><span>18</span><span>19</span><span>20</span><span>21</span><span>22</span><span>23</span></td>
+			</tr>
+		</table>
+		<div class="area-bottom">
+			<a href="javascript:;" id="confirm" class="btn btn-success span2">确定</a>
+			<!-- <a href="javascript:;" id="cancel" class="btn span1">取消</a> -->
+		</div>
+		<input type="hidden" name="" value="" id="timeZone">
+		<script>
+			$(function(){
+				var input = parent.$('#'+location.href.split('#')[1]);
+				DayParting.init('.timeZone',input.val());
+				DayParting.on('change',function(data){
+					console.log(data);
+				})
+			});
+		</script>
+	</body>
+</html>

@@ -1,0 +1,320 @@
+@grid-height:-16px;
+.size(@width,@height){
+	width:@width;
+	height:@height;
+}
+.offset(@position-y,@position-x:0){
+	background-position: @position-x  (@position-y)*@grid-height;
+}
+.tip-default,
+.tip-right,
+.tip-wrong,
+.tip-warning,
+.time-direct,
+.people-direct,
+.btn-operating,
+.btn-to-operate,
+.plan-state,
+.unopened-plan{
+	.size(12px,12px);
+}
+.tip-default,
+.tip-right,
+.tip-wrong,
+.tip-warning,
+.calender,
+.nav-main-page,
+.nav-arrow,
+.td-triangle-left,
+.td-triangle-right,
+.close-tag,
+.time-direct,
+.area-direct,
+.people-direct,
+.personal-attibute,
+.personal-attention,
+.tendency-buy,
+.show-content,
+.hide-content,
+.people-drag,
+.btn-operating,
+.btn-to-operate,
+.left-list-show,
+.left-list-hide,
+.tip-new,
+.plan-state,
+.unopened-plan,
+.td-data-introduction,
+.td-data-release-period,
+.td-data-budget,
+.td-data-url,
+.more-size,
+.export-excel,
+.magnifier,
+.btn-add,
+.icon-number1,
+.icon-number2,
+.mail-tip,
+.title-triangle-bottom,
+.btn-oval-open,
+.btn-oval-close,
+.page-arrow-left,
+.page-arrow-right,
+.success-plan,
+.fail-plan,
+.all-state,
+.area-selected{
+	.bi(icon);
+	display: inline-block;
+}
+.nav-main-page,
+.td-triangle-left,
+.td-triangle-right,
+.close-tag,
+.td-triangle-left,
+.td-triangle-right,
+.show-content,
+.hide-content,
+.btn-operating,
+.btn-to-operate,
+.left-list-show,
+.left-list-hide,
+.more-size,
+.export-excel,
+.magnifier,
+.btn-add,
+.btn-oval-open,
+.btn-oval-close{
+	cursor: pointer;
+}
+/* calender(日期),投放日期 */
+.calender{
+	.size(16px,15px);
+	.offset(0);
+}
+/* 表单元素输入之前默认的提示 */
+.tip-default{
+	.offset(1);
+}
+/* 输入后验证通过的提示 */
+.tip-right{
+	.offset(2);
+}
+/* 输入后验证错误提示 */
+.tip-wrong{
+	.offset(3);
+}
+/* 输入后警告提示 */
+.tip-warning{
+	.offset(4);
+}
+/* 面包屑中的主页 */
+.nav-main-page{
+	.size(14px,13px);
+	.offset(5);
+}
+/* 面包屑中的箭头 */
+.nav-arrow{
+	.size(3px,5px);
+	.offset(6);
+}
+/* 系统提醒和一些标题前使用的三角形图标 */
+/* 三角形图标(箭头方向朝下) */
+.title-triangle-bottom{
+	.size(9px,5px);
+	.offset(7);
+}
+/* 三角形图标(箭头方向朝左) */
+.td-triangle-left{
+	.offset(8);
+}
+.td-triangle-left,
+.td-triangle-right{
+	.size(5px,9px);
+}
+/* 三角形图标(箭头方向朝右) */
+.td-triangle-right{
+	.offset(9);
+}
+/* 关闭-叉号表示 */
+.close-tag{
+	.size(9px,9px);
+	.offset(10);
+}
+
+/* 时段定向(当前已选时段) */
+.time-direct{
+	.offset(11);
+}
+/* 地域定向(当前已选地域) */
+.area-direct{
+	.size(9px,12px);
+	.offset(12);
+}
+/* 人群定向(当前已选人群) */
+.people-direct{
+	.offset(13);
+}
+
+/* 人口属性 */
+.personal-attibute{
+	.size(17px,18px);
+	.offset(14);
+}
+/* 个人关注 */
+.personal-attention{
+	.size(25px,18px);
+	.offset(16);
+}
+/* 购买倾向 */
+.tendency-buy{
+	.size(15px,19px);
+	.offset(18);
+}
+/* 展开收起(比如人群定向中类别菜单展开收起) */
+.show-content{
+	.offset(20);
+}
+.show-content,.hide-content{
+	.size(10px,10px);
+}
+.hide-content{
+	.offset(21);
+}
+/* 人群定向拖拽提示 */
+.people-drag{
+	.size(12px,14px);
+	.offset(22);
+}
+/* 操作按钮hover状态 */
+.btn-operating{
+	.offset(23);
+}
+/* 操作按钮默认样式 */
+.btn-to-operate{
+	.offset(24);
+}
+/* 左侧菜单展开 */
+.left-list-show{
+	.size(10px,9px);
+	.offset(25);
+}
+/* 左侧菜单收缩 */
+.left-list-hide{
+	.size(10px,19px);
+	.offset(26);
+}
+/* 新数据提醒(带有'new'的icon) */
+.tip-new{
+	.size(22px,14px);
+	.offset(27);
+}
+/* 表格中计划状态(标题) */
+.plan-state{
+	.offset(28);
+}
+/* 表格中未开启计划 */
+.unopened-plan{
+	.offset(29);
+}
+/* 表格中数据区段说明 */
+.td-data-introduction{
+	.size(4px,7px);
+	.offset(30);
+}
+/* 计划表格数据字段投放周期 */
+.td-data-release-period{
+	.offset(31);
+}
+.td-data-release-period,
+.td-data-budget{
+	.size(5px,11px);
+}
+/* 计划表格数据字段总预算 */
+.td-data-budget{
+	.offset(32);
+}
+/* 计划表格数据字段到达地址URL */
+.td-data-url{
+	.size(13px,13px);
+	.offset(33);
+}
+/* 创意尺寸 */
+.more-size{
+	.size(5px,11px);
+	.offset(34);
+}
+/* 导出Excel */
+.export-excel{
+	.size(11px,13px);
+	.offset(35);
+}
+/* 放大镜 */
+.magnifier{
+	.size(12px,13px);
+	.offset(36);
+}
+/* 按钮上的'+' */
+.btn-add{
+	.size(13px,13px);
+	.offset(37);
+}
+/* 序号 */
+.icon-number1{
+	.offset(38);
+}
+.icon-number1,
+.icon-number2{
+	.size(16px,16px);
+}
+.icon-number2{
+	.offset(39);
+}
+/* 系统提醒-mail */
+.mail-tip{
+	.size(14px,10px);
+	.offset(40);
+}
+/* 开启和关闭按钮(椭圆形的) */
+.btn-oval-open{
+	.size(63px,23px);
+	.offset(41);
+}
+.btn-oval-close{
+	.size(63px,22px);
+	.offset(43);
+}
+/* 页码中用到的三角形箭头(上一页、下一页) */
+.page-arrow-left{
+	.offset(45);
+}
+.page-arrow-left,
+.page-arrow-right{
+	.size(4px,7px);
+}
+.page-arrow-right{
+	.offset(46);
+}
+/* 创建计划成功和失败 */
+.fail-plan{
+	.offset(47);
+	.size(30px,30px);
+}
+.success-plan{
+	.offset(49);
+	.size(36px,27px);
+}
+/* 表格中的td全部状态*/
+.all-state{
+	.offset(51);
+	.size(7px,4px);
+}
+/* 地域设定已选择的地区 */
+.area-selected{
+	.offset(52);
+	.size(10px,10px);
+}
+.icon-search{
+	.bi(search);
+	.size(20px,17px);
+}

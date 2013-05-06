@@ -1,0 +1,40 @@
+@import 'common';
+.start-create-plan{
+	height: 38px;
+	color: @pink;
+	.font18;
+	font-family: 微软雅黑;
+	padding-top: 40px;
+}
+.step-instruction{
+	.bt-dashed-light-gray;
+	.bb-dashed-light-gray;
+	.bc(@light-yellow);
+	.fc-light-gray;
+	margin-left:0;
+	overflow:hidden;
+	.step-one-hover{
+		.name-card-structure(100px,97px,61px,53px,20px,step_one_hover_bg);
+	}
+	.step-two{
+		.name-card-structure(100px,97px,61px,53px,20px,step_two_bg);
+	}
+	.step-three{
+		.name-card-structure(100px,97px,61px,53px,20px,step_three_bg);
+	}
+	.right{
+		padding-top:20px;
+	}
+	.step-one-hover .right strong,.step-two-hover .right strong,.step-three-hover .right strong{
+		.fc-red;
+	}
+	.step-one{
+		.name-card-structure(100px,97px,61px,53px,20px,step_one_bg);
+	}
+	.step-two-hover{
+		.name-card-structure(100px,97px,61px,53px,20px,step_two_hover_bg);
+	}
+	.step-three-hover{
+		.name-card-structure(100px,97px,61px,53px,20px,step_three_hover_bg);
+	}
+}

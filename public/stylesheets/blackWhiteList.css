@@ -1,0 +1,151 @@
+body{
+	margin:0;
+	padding:0;
+	background:#515151;
+}
+#container{
+	width:1025px;
+	background:#f4f4f4;
+	overflow:hidden;
+	font-size:12px;
+	margin:auto;
+}
+#title{
+	float:left;
+	padding-left:120px;
+	padding-top:24px;
+}
+#container #content{
+	width:810px;
+	padding-left:30px;
+	background:#fff;
+	float:right;
+}
+#selectType{
+	line-height:63px;
+}
+#inputSelect{
+	margin-left:20px;
+}
+#notice{
+	color:#aaa;
+	margin-left:25px;
+}
+.blueBg{
+	width:360px;
+	background:#ecf6ff;
+	float:left;
+}
+.head{
+	height:42px;
+	line-height:42px;
+	overflow:hidden;
+}
+.head h3,.head p{
+	margin:0;
+	margin-left:10px;
+	float:left;
+}
+.head p{
+	float:right;
+	margin-right:10px;
+}
+#search{
+	background:white;
+	padding:10px;
+	border-top:1px solid #dedede;
+	width:330px;
+	margin:auto;
+	border-bottom:1px dashed #dedede;
+}
+#search input{
+	border:0;
+	width:300px;
+	display:inline-block;
+	float:left;
+	margin:0;
+	padding:0;
+	height:17px;
+}
+#search div{
+	border:1px solid #dedede;
+	overflow:hidden;
+}
+#search span{
+	cursor:pointer;
+	display:inline-block;
+	width:20px;
+	height:17px;
+	background:url(/images/search.png);
+	float:right;
+}
+#resultArea{
+	margin-left:20px;
+}
+
+.category{
+	height:30px;
+	line-height:30px;
+	margin-left:11px;
+}
+.category p{
+	margin:0;
+	padding:0;
+	float:left;
+}
+.category span.closed{
+	background:url(/images/trigger.png) -7px;
+	display:inline-block;
+	cursor:pointer;
+	width:7px;
+	height:7px;
+}
+.category span.open{
+	background:url(/images/trigger.png);
+	display:inline-block;
+	cursor:pointer;
+	width:7px;
+	height:7px;
+}
+.domains{
+	line-height:22px;
+	margin-left:40px;
+}
+.domains div:hover{
+	background:#ecf6ff;
+}
+#domainList{
+	background:white;
+	width:350px;
+	margin:auto;
+	overflow-y:auto;
+	color:#898989;
+}
+.display{
+	line-height:22px;
+	padding-left:15px;
+	margin:2px;
+}
+#selectedDomain{
+	width:350px;
+	margin:auto;
+	background:white;
+	margin-bottom:5px;
+	color:#898989;
+	padding-top:2px;
+}
+#selectedDomain p{
+	float:right;
+	margin:0;
+	margin-right:15px;
+}
+.remove_domain,.remove_category{
+	display:inline-block;
+	width:7px;
+	height:7px;
+	cursor:pointer;
+	background:url(/images/del.png);
+}
+.remove_hover{
+	background:url(/images/del_hover.png);
+}

@@ -1,0 +1,40 @@
+@import 'common';
+@height:34px;
+
+.left-nav{
+	display:table-cell;
+	.bi(nav_border);
+	.bc-bright-silver;
+	background-position:right;
+	background-repeat:repeat-y;
+	width:200px;
+	line-height:@height;
+	.font12;
+	
+	.plan-nav{
+		padding-right:12px;
+	}
+	.plan-nav-content{
+		.bb-solid-light-silver;
+		
+		.tactics{
+			.ml6;
+		}
+	}
+	.nav-title,.plan{
+		min-height:@height;
+		padding-left:15px;
+		span:first-child{
+			padding-right:10px;
+		}
+		span.new-title{
+			margin: 0 12px 0 5px;
+		}
+	}
+	.plan{
+		.bc(@white);
+		.bt-solid-light-silver;
+		.bb-solid-light-silver;
+		font-weight:bolder;
+	}
+}

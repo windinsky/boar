@@ -1,0 +1,101 @@
+@import-once './common/background';
+@import-once './common/colors';
+@import-once './common/font';
+@import-once './common/icon';
+@import-once './common/structure';
+@import-once './common/margin';
+@import-once './common/border';
+a{
+	text-decoration:none;
+	color:@blue;
+	&:hover{
+		text-decoration:underline;
+		color:@blue;
+	};
+}
+a.disabled{
+	.fc-light-gray;
+	cursor:text;
+}
+input[readonly]{
+	cursor:default;
+	.bc-white;
+}
+input[type=text]{
+	border-radius: 0;
+	margin:0;
+}
+select,input{
+	.font12;
+}
+input{
+	border-radius: 0;
+	margin:0 !important;
+}
+.hidden{
+	display:none;
+}
+table{
+	.font12;
+}
+ul p{
+	margin:0;
+	padding:0;
+}
+.clear-both{
+	clear:both;
+}
+.transparent{
+	opacity:0;
+}
+.required{
+	.fc-orange;
+}
+
+.table-layout{
+	display:table;
+	width:100%;
+}
+.relative{
+	position:relative;
+}
+#loading{
+	display:inline-block;
+	width:16px;
+	height:16px;
+	.bi(loading,gif);
+	.ml1;
+}
+
+/******************************************************************/
+/* bootstrap patch                                                 /
+/******************************************************************/
+
+/* 下拉菜单的按钮如果在页面右边的话点击之后下拉菜单依然是靠左的，如果文字比较宽就会把横向滚动条撑出来，所以加了下面这个class，将.dropdown-right添加到.btn-group的标签上就好了 */
+.dropdown-right .dropdown-menu:after {
+    left: auto;
+    right: 13px;
+}
+.dropdown-right .dropdown-menu {
+    left: auto;
+    right: 0;
+}
+/* 覆盖 .btn-group 及 .dropdown-menu 的默认字体样式 */
+.btn-group > .btn{
+	.font12;
+	.fc-gray;
+}
+.btn{
+	border-radius:0;
+}
+.dropdown-menu{
+	border-radius:0;
+	li > a{
+		.fc-gray;
+		.font12;
+	}
+}
+label{
+	display:inline-block;
+	.font12;
+}
