@@ -3,6 +3,8 @@
  * Module dependencies.
  */
 
+// var a = 1;
+
 require('controller_helper').init();
 var express = require('express')
   , routes = require('./routes');
