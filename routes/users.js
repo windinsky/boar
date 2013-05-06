@@ -29,10 +29,11 @@
 	update:function(req, res){
 		
 	},
-	del:function(req, res){
+	show:function(req, res){
 		
 	},
-	show:function(req, res){
+	check: function(req,res){
+		// TODO
 	}
 };
 exports.methods = methods;
