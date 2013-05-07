@@ -3,7 +3,6 @@
  * Module dependencies.
  */
 
-
  // add by test
 
 require('controller_helper').init();
