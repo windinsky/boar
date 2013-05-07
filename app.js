@@ -3,7 +3,6 @@
  * Module dependencies.
  */
 
-
  // add by test
 
 require('controller_helper').init();
@@ -48,15 +47,14 @@ require('helper');
 
 // Routes
 app.get('/', routes.index);
-app.get('/get', routes.get);
-app.post('/save', routes.save);
-app.post('/', routes.index);
 app.get('/login', routes.sessions.n);
 app.post('/users/check', routes.users.check);
 RoutesResource('articles');
-RoutesResource('pictures');
+// RoutesResource('pictures');
 RoutesResource('users');
 RoutesResource('sessions');
+
+
 // Initialize database and Model Classes
 require('activeRecord').initDbClasses();
 

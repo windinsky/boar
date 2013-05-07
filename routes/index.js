@@ -5,7 +5,8 @@
 exports.articles = require('./articles').methods;
 exports.users = require('./users').methods;
 exports.sessions = require('./sessions').methods;
-exports.pictures = require('./pictures').methods;
+// exports.pictures = require('./pictures').methods;
+
 exports.index = function(req, res){
 	// var path = require('./path1.js').path;
 	// var temp = {};
