@@ -27,7 +27,7 @@ input,button,select,textarea{outline:none}
 	padding:10px 0;
 	margin:0;
 }
-subtitle{
+.subtitle{
 	line-height:30px;
 }
 .hr{

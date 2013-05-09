@@ -33,7 +33,7 @@
 		
 	},
 	check: function(req,res){
-		// TODO
+		res.end("0");
 	}
 };
 exports.methods = methods;

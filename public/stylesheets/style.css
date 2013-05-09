@@ -32,4 +32,10 @@ input[type=submit]:hover,input[type=button]:hover{
 .clear{
 	overflow:hidden;
 }
+.fl {
+	float: left;
+}
+.fr {
+	float: right;
+}
 
