@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/stylesheets/dailyreports.css">
+<link rel="stylesheet" href="/css/index.css">
+
+<div class="reports" id="container">	
+	<div id="header">
+		<div class="hl">
+			<h1>FrontEnd</h1>
+		</div>
+		<div class="hr">
+			<div id="search_c">
+				<input type="text" name="search" value="" id="searchInput"/>
+				<span id="searchSubmit">search</span>
+			</div>
+		</div>
+	</div>
+	<div class="clear">
+		<subtitle>More passion,more fun</subtitle>
+		<div id="nav">
+			<ul>
+				<li><a href="/articles">Articles</a></li>
+				<li>Photos</li>
+				<li>Motions</li>
+				<li>About</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="clear bar">
+		<h2 class="fl">日报列表</h2>
+		<div class="fr add">
+			<a href="/dailyreports/new"><span><i>+</i>添加</span></a>
+		</div>
+	</div>
+
+	<div class="list">
+		<% dailyreports.forEach(function(report, index) { %>
+		<div class="item">
+			<h3>
+				<span><%= DateUtils.format(report.date) %><a href="#" class="name"><%= report.user_id %></a></span>
+			</h3>
+			<div class="content">
+				<pre><%= report.content %></pre>
+			</div>
+		</div>
+		<% }) %>
+	</div>
+
+	<!-- <table class="list">
+		<thead>
+			<tr>
+				<th>序号</th>
+				<th>日报日期</th>
+				<th>创建者</th>
+				<th>内容</th>
+				<th>创建时间</th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<% dailyreports.forEach(function(report, index) { %>
+			<tr>
+				<td><%= index+1 %></td>
+				<td><%= DateUtils.format(report.date) %></td>
+				<td><%= report.user_id %></td>
+				<td><%= report.content %></td>
+				<td><%= DateUtils.format(report.created_at) %></td>
+			</tr>
+			<% }) %>
+		</tbody>
+	</table> -->
+</div>

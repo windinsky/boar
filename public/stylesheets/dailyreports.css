@@ -1,0 +1,64 @@
+body, dl, dd, h1, h2, h3, h4, h5, h6, p, form {margin:0;}   
+
+ol,ul,li {margin:0; padding:0;}
+
+a {text-decoration: none;}
+
+a:visited {color: #769;}
+a:link {color: #259;}
+
+.wrapper {
+	width: 950px;
+	margin: 0 auto;
+	margin-top: 20px;
+	font-family:consolas,monaco,Arial;
+	line-height: 1.62;
+}
+
+.reports .bar {
+	margin-top: 20px;
+}
+
+.reports .add {
+	position: relative;
+}
+
+.reports .add a {
+	font: 12px Helvetica,Arial,sans-serif;
+	display: inline-block;
+	background-color: #f1f7f6;
+	padding: 4px 1em 3px 24px;
+}
+
+.reports .add a i {
+	position: absolute;
+	top: 5px;
+	left: 10px;
+}
+
+.tablelist {
+	width: 100%;
+	font-size: 13px;
+}
+
+.tablelist th {
+	text-align: left;
+}
+
+.tablelist tr td {
+	border-bottom: 1px dashed #ddd;
+	padding-top: 6px;
+	padding-bottom: 5px;
+}
+
+.reports .list h3 {
+	margin: 1.5em 0 1em 0;
+	background-color: #f1f7f6;
+}
+
+.reports .list h3 .name {
+	margin-left: 2em;
+}
+
+
+
