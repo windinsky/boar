@@ -1,6 +1,6 @@
 module.exports = {
 	index: function(req, res) {
-		var find = DailyReport.findAll();
+		var find = DailyReport.findByUserId(req.session['user_id']);
 		
 		find.once('success', function(items) {
 			res.render('dailyreports/index.ejs', {title: '日报列表', dailyreports: items});

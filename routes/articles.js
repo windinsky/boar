@@ -1,6 +1,6 @@
 ﻿var methods = {
 	n: function(req, res){
-		if (!checkSession.call(req,res)) return;
+		// if (!checkSession.call(req,res)) return;
 		res.render('articles/new.ejs',{
 			title:'Create new article'
 		});
@@ -116,3 +116,16 @@
 };
 // beforeFilter(checkMsg)
 exports.methods = methods;
+exports.filter={
+	beforeFilters:[{
+		func: checkSession,
+		// only:['n'],
+		except:['show']
+	},{
+		func: function(req,res){
+			console.log('haha'),
+			res.end('鬼啊！！');
+			return false;
+		}
+	}]
+};

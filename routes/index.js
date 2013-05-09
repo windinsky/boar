@@ -1,52 +1,64 @@
-
-/*
- * GET home page.
- */
-exports.articles = require('./articles').methods;
-exports.users = require('./users').methods;
-exports.sessions = require('./sessions').methods;
-exports.dailyreports = require('./dailyreports');
-// exports.pictures = require('./pictures').methods;
-
-exports.index = function(req, res){
-	// var path = require('./path1.js').path;
-	// var temp = {};
-	// for(var i in path){
-	// 	temp[path[i].name] = path[i];
-	// 	temp[path[i].name].text = path[i].name;
-	// 	temp[path[i].name].name = undefined;
-	// 	// delete temp[path[i].name].name;
-	// }
-	// res.json(temp);
-	
-	// if (!checkSession.call(req,res)) return;
-	// var msg = req.session.msg || '';
-	// req.session.msg = undefined;
-	// var f = Article.findBy([{
-	// 	is_public:1
-	// },{
-	// 	user_id: req.session.user_id
-	// }]);
-	res.render('index.ejs', { title: 'Express' , msg: "123" , articles: [] });
-	// f.once('success',function(data){
-	// 	
-	// });
-};
-exports.get = function(req,res){
-	res.end('["http://g.163.com/r?site=netease&affiliate=homepage&cat=homepage&type=logo190x180&location=3","http://g.163.com/r?site=netease&affiliate=homepage&cat=homepage&type=column360x100&location=5"]');
-}
-exports.save = function(req,res){
-	var fs = require("fs");
-	var imgData = req.body.img;
-    //过滤data:URL
-	var base64Data = imgData.replace(/^data:image\/\w+;base64,/, "");
-	var dataBuffer = new Buffer(base64Data, 'base64');
-	fs.writeFile("out"+Math.random()+".png", dataBuffer, function(err) {
-		if(err){
-			
+function Controller(controller){
+	this.filter = controller.filter;
+	this.methods = controller.methods;
+	this.execute = function(req,res,method){
+		var filterList = [];
+		if (this.filter && this.filter.beforeFilters) {
+			var filters = this.filter.beforeFilters;
+			for (var i=0; i < filters.length; i++) {
+				var filter = filters[i];
+				if (filter.only && filter.only.length && filter.only.indexOf(method) !== -1) {
+					filterList.push(filter.func);
+				}else if(filter.except && filter.except.length && filter.except.indexOf(method) === -1){
+					filterList.push(filter.func);
+				}
+				if (!filter.only && !filter.except) {
+					filterList.push(filter.func);
+				};
+			};
+			var i = 0;
+			function a(){
+				if (i < filterList.length) {
+					var result = filterList[i](req,res);
+					if (result === false) {
+						return ;
+					}else if(result === true){
+						i++;
+						if(i < filterList.length) a();
+						else controller.methods[method](req,res);
+					}else{
+						result.on('end',function(obj){
+							if (obj == true) {
+								if(i < filterList.length) a();
+								else this.methods[method](req,res);
+							};
+						});
+					}
+				};
+			}
+			a();
 		}else{
-			
+			this.methods[method](req,res);
 		}
-	});
-	res.end('');
+	};
 }
+function importControllers(ctrl_names){
+	for (var i=0; i < ctrl_names.length; i++) {
+		var ctrl_name = ctrl_names[i];
+		exports[ctrl_name] = new Controller(require('./'+ctrl_name));
+	};
+}
+importControllers([
+	'articles',
+	'users',
+	'sessions',
+	'dailyreports'
+]);
+
+exports.index = new Controller({
+	methods:{
+		index:function(req, res){
+			res.render('index.ejs', { title: 'Express' , msg: "123" , articles: [] });
+		}
+	}
+});
