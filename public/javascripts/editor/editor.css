@@ -1,0 +1,56 @@
+body {
+	word-wrap: break-word; 
+	word-break: break-all; 	
+}
+
+#boar-editor {
+	background-color: #fff;
+	width: 100%;
+}
+
+.editor-operator-wrapper {
+	border: 1px solid #dadde1;
+	height: 28px;
+	margin-bottom: 5px;
+	z-index: 20;
+	position: relative;
+	background-color: #fff;
+}
+
+.editor-operator-wrapper .operator {
+	display: block;
+	line-height: 28px;
+	width: 5em;
+}
+
+.editor-operator-wrapper .operator span {
+	border: 1px solid #ccc;	
+}
+
+.editor-operator-wrapper ul {
+	list-style-type: none;
+}
+
+.editor-operator-wrapper > ul > li {
+	float: left;
+	padding-left: 10px;
+	background-color: #fff;	
+}
+
+.editor-operator-wrapper .sub-item {
+	display: none;	
+}
+
+.editor-operator-wrapper .sub-item a {
+	display: block;
+	color: #000;
+}
+
+.editor-operator-wrapper .sub-item a:hover {
+	background-color: #ccc;
+}
+#boar-editor {
+	position: absolute;
+	top: 35px;
+	z-index: 19;
+}

@@ -3,8 +3,24 @@
 
 <div class="wrapper">
 	<h3>添加日报</h3>
-	<form action="" method="post">
+<!-- 	<form action="" method="post">
 		<textarea name="" id="" cols="100" rows="10"></textarea>
 		<input type="submit" value="写好了">
 	</form>
+ -->
+
+	<div id="editor-wrapper" style="width: 600px;">
+			
+	</div>	
 </div>
+
+<script src="/javascripts/jQuery.js"></script>
+<script src="/javascripts/editor/editor.js"></script>
+<script src="/javascripts/editor/templates.js"></script>
+<script>
+	var editor = new BoarEditor('editor-wrapper', {
+		operators: ['backgroundColor', 'color', 'fontWeight'],
+		content: '请输入内容'
+	});
+</script>
+

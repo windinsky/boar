@@ -1,4 +1,4 @@
-module.exports = {
+var methods = {
 	index: function(req, res) {
 		var find = DailyReport.findByUserId(req.session['user_id']);
 		
@@ -24,4 +24,12 @@ module.exports = {
 	check: function(req,res){
 		res.end("0");
 	}
+};
+
+exports.methods = methods;
+
+exports.filter={
+	beforeFilters:[{
+		func: checkSession
+	}]
 };
